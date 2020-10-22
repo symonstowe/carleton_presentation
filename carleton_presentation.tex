@@ -1,0 +1,102 @@
+% !TEX program = luatex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Presentation template and short Beamer example/tutorial.
+%% Vincent Labatut 2017-19 <vincent.labatut@univ-avignon.fr>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% setup beamer
+\documentclass[10pt,    % default is 11pt, use 10pt for more compact slides
+%    handout,            % collapse all overlays (=animations) and video-invert console text
+    english,            % presentation language (theme supports only french & english)
+    xcolor=table,       % colors in the tables
+    envcountsect,        % include section number in theorem numbers
+    aspectratio=1610
+]{beamer}
+\usepackage{gensymb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% setup the theme
+%\usepackage{./sty/beamerthemeAU}         % no option at all
+\usepackage[light]{./sty/beamerthemeAU}   % the "light" option only changes the title and section pages
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% setup side notes
+\usepackage{pgfpages}                                   % comment all 3 below lines to hide notes
+%\setbeameroption{show notes}                           % alternate content and note slides
+%\setbeameroption{show only notes}                      % only note slides
+%\setbeameroption{show notes on second screen=right}    % dualscreen: right, left, top, bottom
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% name of the biblatex file
+%\addbibresource{biblio.bib}
+\setbeamertemplate{footline}[frame number]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% title and subtitle of the presentation (the latter is optional)
+\title[] % leave empty for no title in footer
+{Presentation using the Carleton University logo and basic colour scheme}
+\subtitle{Simplified and ....}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% date of the presentation (leave empty for no date, default is today)
+\date[] % leave empty for no date in footer
+    {\today}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% authors and their affiliations (the latter is optional)
+\author[] % leave empty for no author in footer
+{Symon~Stowe \alert{Author~Two}} %\inst{} \and \underline{FirstnameB~LastnameB}\inst{2} \and FirstnameC~LastnameC\textsuperscript{1,2}}
+\institute[] % (short affiliation not used in this theme)
+{\texttt{symonstowe@sce.carleton.ca}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% optional: additional logo (ex. lab)
+\titlegraphic{\includegraphics[width=3.5cm]{carleton-university-logo.pdf}\hspace{5cm}}
+% if you want several logos, put them in a box
+%\titlegraphic{\parbox{3cm}{\includegraphics[width=3cm,]{images/ceri_logo.pdf}\newline\includegraphics[width=3cm,]{images/lia_logo.pdf}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\graphicspath{{imgs/}}	% Root directory of the pictures 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%% title page
+	
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Phantom measurements}    
+Large amounts of noise are present in the phantom measurements...
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{example-image}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Challenges}    
+\begin{columns}[c]
+\begin{column}{0.5\textwidth}
+\alert{Simulation}
+\begin{itemize}
+\item Internal electrodes can be used to improve image reconstruction of a single ball
+\item Modified current and injection patterns can increase sensitivity near internal electrodes
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\alert{Real-world}
+\begin{itemize}
+\item Movement of internal electrodes is significant 
+\item Large errors are introduced in the reconstructions
+\item Constant mesh density is not ideal and very slow
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
